@@ -1,0 +1,29 @@
+.controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+.intro {
+    display: flex;
+    margin-top: 5rem;
+    justify-content: space-evenly;
+}
+
+.intro .likes{
+    padding: 5px 5px 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.intro .likes span.icon{
+    margin-left: 5px;
+}
+
+.intro .likes span.icon:hover{
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transform: scale(1.3);
+}

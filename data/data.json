@@ -1,0 +1,52 @@
+{
+    "Header":{
+        "intro":" Hello, 👋 <br /> Dikshant Sharma",
+        "Likes":"100",
+        "image":"https://avatars.githubusercontent.com/u/56189275?v=4"
+    },
+    "About":{
+        "title":"About Me",
+        "description":"I am a Full Stack Developer, currently working at <a href='https://www.codingninjas.com/'>Coding Ninjas</a>. I am a tech enthusiast and love to explore new technologies. I have worked on various projects and have experience in developing web applications. I am a quick learner and always ready to learn new things.",
+        "skills":[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Python",
+            "Django",
+            "C++",
+            "Java"
+        ]
+    },
+    "Project":{
+        "projects":[
+            {
+                "title":"Project 1",
+                "description":"This is a project description",
+                "image":"https://via.placeholder.com/150",
+                "link":"#",
+                "id":"1",
+                "github":"https://github.io"
+            },
+            {
+                "title":"Project 2",
+                "description":"This is a project description",
+                "image":"https://via.placeholder.com/150",
+                "link":"#",
+                "id":"1",
+                "github":"https://github.io"
+            },
+            {
+                "title":"Project 3",
+                "description":"This is a project description",
+                "image":"https://via.placeholder.com/150",
+                "link":"#",
+                "id":"1",
+                "github":"https://github.io"
+            }
+        ]
+    }
+    }

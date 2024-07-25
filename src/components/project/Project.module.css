@@ -1,0 +1,9 @@
+.projectSection{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* flex-direction: column; */
+    padding: 50px 0;
+    /* flex-wrap: wrap; */
+    overflow-x: scroll;
+}

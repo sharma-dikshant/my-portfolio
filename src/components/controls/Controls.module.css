@@ -1,0 +1,12 @@
+.controlButtons{
+   display: flex;
+   width: 300px;
+   padding: 10px;
+   justify-content: right;
+   align-items: center;
+}
+
+.controlButtons span{
+   cursor: pointer;
+}
+
