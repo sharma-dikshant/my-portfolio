@@ -1,0 +1,155 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .dataEditor,
+  .projects {
+    width: 100%;
+    padding: 2rem;
+    background-color: #f8f8f8;
+  }
+  
+  .dataEditor table,
+  .projects table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dataEditor th,
+  .dataEditor td,
+  .projects th,
+  .projects td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .dataEditor th,
+  .projects th {
+    background-color: #481E14;
+    color: white;
+  }
+  
+  .dataEditor tr:nth-child(even),
+  .projects tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .dataEditor tr:hover,
+  .projects tr:hover {
+    background-color: #ddd;
+  }
+  
+  .dataEditor td,
+  .projects td {
+    vertical-align: top;
+  }
+  
+  .dataEditor td span,
+  .projects td span {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .dataEditor td button,
+  .projects td button {
+    padding: 10px 20px;
+    background-color: #9B3922;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dataEditor td button:hover,
+  .projects td button:hover {
+    background-color: #F2613F;
+  }
+  
+  @media (max-width: 768px) {
+    .dataEditor table,
+    .dataEditor th,
+    .dataEditor td,
+    .projects table,
+    .projects th,
+    .projects td {
+      display: block;
+      width: 100%;
+    }
+  
+    .dataEditor th,
+    .projects th {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    .dataEditor td,
+    .projects td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    .dataEditor td:before,
+    .projects td:before {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: calc(50% - 30px);
+      white-space: nowrap;
+      font-weight: bold;
+    }
+  
+    .dataEditor td:nth-of-type(1):before {
+      content: "Title";
+    }
+  
+    .dataEditor td:nth-of-type(2):before {
+      content: "Intro/Description";
+    }
+  
+    .dataEditor td:nth-of-type(3):before {
+      content: "Image/Skills";
+    }
+  
+    .dataEditor td:nth-of-type(4):before {
+      content: "Actions";
+    }
+  
+    .projects td:nth-of-type(1):before {
+      content: "ID";
+    }
+  
+    .projects td:nth-of-type(2):before {
+      content: "Title";
+    }
+  
+    .projects td:nth-of-type(3):before {
+      content: "Live";
+    }
+  
+    .projects td:nth-of-type(4):before {
+      content: "Github";
+    }
+  
+    .projects td:nth-of-type(5):before {
+      content: "Image";
+    }
+  
+    .projects td:nth-of-type(6):before {
+      content: "Description";
+    }
+  
+    .projects td:nth-of-type(7):before {
+      content: "Actions";
+    }
+  }
+  

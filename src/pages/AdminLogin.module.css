@@ -1,0 +1,211 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.dashNav {
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5%;
+    align-items: center;
+    background-color: #f8f8f8;
+}
+
+.dashNav div {
+    display: flex;
+    align-items: center;
+}
+
+.dashNav span {
+    text-align: center;
+}
+
+.dashNav .icon {
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+.userButton {
+    border: 1px solid grey;
+    background-color: whitesmoke;
+    border-radius: 16px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.userButton span {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+
+/* Layout */
+
+/* .layout {
+    display: flex;
+    flex-wrap: wrap; 
+} */
+
+.layout section {
+    flex: 1 1 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Custom Section */
+.customizeSection {
+    /* border: 2px solid red; */
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Main Dashboard */
+.dashMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 5%;
+}
+
+.dashMain section {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.dashMain .stats strong {
+    font-size: 2rem;
+}
+
+.dashMain .stats .icon {
+    font-size: 2rem;
+}
+
+.dashMain .actionField div {
+    padding: 10px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashMain .actionField div span {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.dashMain .actionField div button {
+    padding: 10px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* to do  */
+
+.toDo {
+    border: 2px solid blue;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+  }
+  
+  .toDo .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .toDo .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .toDo .header h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .toDo .header .add-new-task,
+  .toDo .header .filter,
+  .toDo .header .clear {
+    margin-bottom: 1rem;
+  }
+  
+  .toDo .header form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .toDo .header input,
+  .toDo .header button,
+  .toDo .header select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .toDo .header button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .toDo .header button:hover {
+    background-color: #0056b3;
+  }
+  
+  .toDo .task-list {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .toDo .task-list ul {
+    list-style-type: none;
+  }
+  
+  @media (min-width: 768px) {
+    .layout section {
+      flex: 1 1 48%;
+    }
+  }
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .layout section {
+        flex: 1 1 50%;
+    }
+
+    .dashMain section {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .layout section {
+        flex: 1 1 50%;
+    }
+
+    .dashMain section {
+        justify-content: space-around;
+    }
+}

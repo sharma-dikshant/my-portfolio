@@ -1,0 +1,109 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dataEditor {
+  width: 100%;
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+.dataEditor table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dataEditor th,
+.dataEditor td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.dataEditor th {
+  background-color: #481E14;
+  color: white;
+}
+
+.dataEditor tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.dataEditor tr:hover {
+  background-color: #ddd;
+}
+
+.dataEditor td {
+  vertical-align: top;
+}
+
+.dataEditor td span {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.dataEditor td button {
+  padding: 10px 20px;
+  background-color: #9B3922;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dataEditor td button:hover {
+  background-color: #F2613F;
+}
+
+@media (max-width: 768px) {
+  .dataEditor table,
+  .dataEditor th,
+  .dataEditor td {
+    display: block;
+    width: 100%;
+  }
+
+  .dataEditor th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .dataEditor td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .dataEditor td:before {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: calc(50% - 30px);
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  .dataEditor td:nth-of-type(1):before {
+    content: "Title";
+  }
+
+  .dataEditor td:nth-of-type(2):before {
+    content: "Intro/Description";
+  }
+
+  .dataEditor td:nth-of-type(3):before {
+    content: "Image/Skills";
+  }
+
+  .dataEditor td:nth-of-type(4):before {
+    content: "Actions";
+  }
+}

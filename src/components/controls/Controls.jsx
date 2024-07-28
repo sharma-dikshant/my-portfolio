@@ -1,6 +1,7 @@
 import ToogleButton from "./toogleButton/ToogleButton";
 import { GoTools } from "react-icons/go";
 import styles from "./Controls.module.css";
+import { NavLink } from "react-router-dom";
 
 function Controls() {
   return (
@@ -9,7 +10,9 @@ function Controls() {
         <ToogleButton />
       </span>
       <span>
-        <GoTools />
+        <NavLink to="/admin-auth">
+          <GoTools />
+        </NavLink>
       </span>
     </div>
   );
