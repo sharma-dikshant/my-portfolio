@@ -14,7 +14,7 @@ import Button from "../components/button/Button";
 import ToDo from "../components/toDo/ToDo";
 
 export default function AdminLogin() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return !isLoggedIn ? (
     <div>

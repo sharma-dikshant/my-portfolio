@@ -1,4 +1,4 @@
-.controls {
+/* .controls {
     position: absolute;
     top: 0;
     right: 0;
@@ -26,4 +26,81 @@
     background-color: #f8f9fa;
     cursor: pointer;
     transform: scale(1.3);
-}
+} */
+
+
+/* Header.module.css */
+.controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .profilePhoto img {
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .profilePhoto img:hover {
+    transform: scale(1.1);
+  }
+  
+  .socialConnect h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+  
+  .likes {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .likes span.icon {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .likes span.icon:hover {
+    transform: scale(1.3);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .intro {
+      margin-top: 3rem;
+    }
+  
+    .socialConnect h2 {
+      font-size: 1.5rem;
+    }
+  
+    .likes {
+      flex-direction: column;
+    }
+  
+    .likes span.icon {
+      margin: 10px 0 0 0;
+    }
+  }
+  

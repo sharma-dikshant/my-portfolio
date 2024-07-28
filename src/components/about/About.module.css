@@ -1,0 +1,31 @@
+/* About.module.css */
+.aboutSection {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .aboutSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .aboutSection p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .aboutSection h2 {
+      font-size: 2rem;
+    }
+  
+    .aboutSection p {
+      font-size: 1rem;
+    }
+  }
+  

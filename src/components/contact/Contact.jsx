@@ -17,7 +17,14 @@ function Contact() {
           <label htmlFor="message">Message:</label>
           <textarea id="message" name="message"></textarea>
         </div>
-        <Button><a href="mailto:dikshantsharma2005@gmail.com">send mail</a></Button>
+        <Button>
+          <a
+            href="mailto:dikshantsharma2005@gmail.com"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            send mail
+          </a>
+        </Button>
       </form>
     </div>
   );

@@ -14,7 +14,7 @@
     cursor: default;
     color: var(--dark-grey);
     opacity: .9;
-    margin: auto;
+    margin: 1rem;
     padding: 1.5rem;
     font-weight: 600;
     background: var(--lightest-grey);

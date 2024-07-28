@@ -1,6 +1,6 @@
 import "./Card.css";
 //eslint-disable-next-line
-export default function Card({ content = "this is a card", children }) {
+export default function Card({ content = null, children }) {
   return (
     <div className="like-dislike-container">
       {/* <div className="tool-box">

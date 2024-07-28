@@ -16,7 +16,7 @@ function Header() {
         </div>
         <div className={styles.socialConnect}>
           <h2>
-            Hello, 👋 <br /> Dikshant Sharma
+            Hello, 👋 <br /> I&apos;m Dikshant Sharma
           </h2>
           <SocialConnect />
           <div className={styles.likes}>

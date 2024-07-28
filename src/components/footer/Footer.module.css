@@ -1,0 +1,38 @@
+.footer {
+    padding: 20px;
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    height: 20vh;
+  }
+  
+  .footer .socialMedia {
+    margin-bottom: 10px;
+  }
+  
+  .footer .socialMedia a {
+    margin: 0 10px;
+    color: #61dafb;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .footer .socialMedia a:hover {
+    text-decoration: underline;
+  }
+  
+  .footerInfo p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+  
+  .footerInfo p a {
+    color: #61dafb;
+    text-decoration: none;
+  }
+  
+  .footerInfo p a:hover {
+    text-decoration: underline;
+  }
+  
