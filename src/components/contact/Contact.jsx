@@ -1,5 +1,7 @@
 import styles from "./Contact.module.css";
 
+import Button from "../button/Button";
+
 function Contact() {
   return (
     <div className={styles.contactSection}>
@@ -15,9 +17,7 @@ function Contact() {
           <label htmlFor="message">Message:</label>
           <textarea id="message" name="message"></textarea>
         </div>
-        <button type="submit">
-          <a href="mailto:dikshantsharma2005@gmail.com">send mail</a>
-        </button>
+        <Button><a href="mailto:dikshantsharma2005@gmail.com">send mail</a></Button>
       </form>
     </div>
   );

@@ -1,4 +1,4 @@
-import ToogleButton from "./toogleButton/ToogleButton";
+import ToogleButton from "../toogleButton/ToogleButton";
 import { GoTools } from "react-icons/go";
 import styles from "./Controls.module.css";
 import { NavLink } from "react-router-dom";

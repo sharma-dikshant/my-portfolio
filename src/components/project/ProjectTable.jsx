@@ -1,4 +1,4 @@
-import styles from "./Projects.module.css";
+import styles from "./ProjectTable.module.css";
 
 const projectList = [
   {
@@ -43,7 +43,7 @@ const projectList = [
   },
 ];
 
-function Projects() {
+export default function ProjectTable() {
   return (
     <div className={styles.projects}>
       <table>
@@ -83,5 +83,3 @@ function Projects() {
     </div>
   );
 }
-
-export default Projects;
