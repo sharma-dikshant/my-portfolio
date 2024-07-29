@@ -3,55 +3,14 @@ import styles from "./Project.module.css";
 import Card from "../card/Card";
 import Button from "../button/Button";
 
-const projectList = [
-  {
-    id: 1,
-    title: "Project 1",
-    description: "This is project 1",
-    image: "https://via.placeholder.com/150",
-    github: "https://github.io",
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    description: "This is project 2",
-    image: "https://via.placeholder.com/150",
-    github: "https://github.io",
-    link: "#",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    description: "This is project 3",
-    image: "https://via.placeholder.com/150",
-    github: "https://github.io",
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Project 4",
-    description: "This is project 4",
-    image: "https://via.placeholder.com/150",
-    github: "https://github.io",
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "Project 5",
-    description: "This is project 5",
-    image: "https://via.placeholder.com/150",
-    github: "https://github.io",
-    link: "#",
-  },
-];
-
-function Project() {
+//eslint-disable-next-line
+function Project({ projectList }) {
   const [visibleProject, setVisibleProject] = useState(1);
   return (
     <div className={styles.projectSection}>
-      {projectList.map((project) =>
-        visibleProject === project.id ? (
+      {/* eslint-disable-next-line */}
+      {projectList.map((project, i) =>
+        visibleProject === i + 1 ? (
           <div key={project.id} className={styles.layout}>
             <Card
               // content={project.description}
@@ -108,6 +67,7 @@ function Project() {
                 <Button
                   OnClick={() =>
                     setVisibleProject((prev) =>
+                      //eslint-disable-next-line
                       prev === 1 ? projectList.length : prev - 1
                     )
                   }
@@ -117,6 +77,7 @@ function Project() {
                 <Button
                   OnClick={() =>
                     setVisibleProject((prev) =>
+                      //eslint-disable-next-line
                       prev === projectList.length ? 1 : prev + 1
                     )
                   }

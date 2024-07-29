@@ -3,8 +3,9 @@ import Controls from "../controls/Controls";
 import { SocialConnect } from "../socialConnects/SocialConnect";
 import { FaHeart } from "react-icons/fa";
 import styles from "./Header.module.css";
-
-function Header() {
+//eslint-disable-next-line
+function Header({ likes, updateLikes }) {
+ 
   return (
     <>
       <div className={styles.controls}>
@@ -16,14 +17,14 @@ function Header() {
         </div>
         <div className={styles.socialConnect}>
           <h2>
-            Hello, 👋 <br /> I&apos;m Dikshant Sharma
+            Hello, 👋 <br />I&apos;m Dikshant Sharma
           </h2>
           <SocialConnect />
           <div className={styles.likes}>
             <span>
-              <strong>100</strong>
+              <strong>{likes}</strong>
             </span>
-            <span className={styles.icon}>
+            <span className={styles.icon} onClick={() => updateLikes()}>
               <FaHeart />
             </span>
           </div>

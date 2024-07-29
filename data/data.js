@@ -1,0 +1,42 @@
+export const projectList = [
+    {
+      id: 1,
+      title: "WorldWise",
+      description: "A tracking app for all your trips at single place",
+      image: "./screenshots/image.png",
+      github: "https://github.io",
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "Project 2",
+      description: "This is project 2",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.io",
+      link: "#",
+    },
+    {
+      id: 3,
+      title: "Project 3",
+      description: "This is project 3",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.io",
+      link: "#",
+    },
+    {
+      id: 4,
+      title: "Project 4",
+      description: "This is project 4",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.io",
+      link: "#",
+    },
+    {
+      id: 5,
+      title: "Project 5",
+      description: "This is project 5",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.io",
+      link: "#",
+    },
+  ];

@@ -10,7 +10,7 @@ function Footer() {
       </div> */}
       <div className={styles.footerInfo}>
         <p>&copy; {new Date().getFullYear()} Dikshant Sharma. All Rights Reserved.</p>
-        <p>Created with React and styled-components.</p>
+        <p>Created with React and firebase.</p>
       </div>
     </div>
   );

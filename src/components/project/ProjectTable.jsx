@@ -1,49 +1,103 @@
+import { useState, useEffect } from "react";
+import { collection, addDoc, getDoc, doc, updateDoc } from "firebase/firestore";
+
+import { db } from "../../firebase";
 import styles from "./ProjectTable.module.css";
 
-const projectList = [
-  {
-    id: 1,
-    title: "Project 1",
-    description: "This is project 1",
-    image: "https://via.placeholder.com/150",
-    live: "https://live.com",
-    github: "https://github.com",
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    description: "This is project 2",
-    image: "https://via.placeholder.com/150",
-    live: "https://live.com",
-    github: "https://github.com",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    description: "This is project 3",
-    image: "https://via.placeholder.com/150",
-    live: "https://live.com",
-    github: "https://github.com",
-  },
-  {
-    id: 4,
-    title: "Project 4",
-    description: "This is project 4",
-    image: "https://via.placeholder.com/150",
-    live: "https://live.com",
-    github: "https://github.com",
-  },
-  {
-    id: 5,
-    title: "Project 5",
-    description: "This is project 5",
-    image: "https://via.placeholder.com/150",
-    live: "https://live.com",
-    github: "https://github.com",
-  },
-];
-
 export default function ProjectTable() {
+  const [projectList, setProjectList] = useState([
+    {
+      id: 1,
+      title: "WorldWise",
+      description: "A tracking app for all your trips at single place",
+      image: "./screenshots/image.png",
+      github: "https://github.io",
+      link: "#",
+    },
+  ]);
+
+  const [add, setAdd] = useState(false);
+
+  let newTitle;
+  let newLive;
+  let newGithub;
+  let newImage;
+  let newDescription;
+
+  useEffect(function () {
+    // async function fetchData() {
+    //   try {
+    //     const collectionRef = collection(db, "projects");
+    //     console.log(collectionRef);
+    //     if (projectList.length === 0) return;
+    //     const docRef = await addDoc(collectionRef, projectList);
+    //     console.log(docRef.id);
+    //   } catch (error) {
+    //     console.error("Error fetching data: ", error);
+    //   }
+    // }
+    // fetchData();
+
+    async function fetchData() {
+      try {
+        const docRef = doc(db, "projects", "EHzcqmc7DUlrKw83dySi");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          // console.log(docRef.id);
+          // console.log(docSnap.data());
+          const data = docSnap.data();
+          const projectsArray = data.projects;
+          // console.log(projectsArray);
+          setProjectList(projectsArray);
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  async function handleDelete(id) {
+    const docRef = doc(db, "projects", "EHzcqmc7DUlrKw83dySi");
+    console.log("Delete", id);
+    const newArray = projectList.filter((project) => project.id !== id);
+    // console.log(newArray);
+    try {
+      await updateDoc(docRef, {
+        projects: newArray,
+      });
+      setProjectList((prev) => prev.filter((project) => project.id !== id));
+    } catch (error) {
+      console.error("Error deleting data: ", error);
+    }
+  }
+
+  async function handleAdd() {
+    const docRef = doc(db, "projects", "EHzcqmc7DUlrKw83dySi");
+
+    const newProject = {
+      id: Date.now(),
+      title: newTitle,
+      description: newDescription,
+      image: newImage,
+      github: newGithub,
+      link: newLive,
+    };
+    const newArray = [...projectList, newProject];
+    try {
+      await updateDoc(docRef, {
+        projects: newArray,
+      });
+      setProjectList((prev) => [...prev, newProject]);
+    } catch (error) {
+      console.error("Error adding data: ", error);
+    } finally {
+      setAdd(false);
+    }
+  }
+
   return (
     <div className={styles.projects}>
       <table>
@@ -59,8 +113,8 @@ export default function ProjectTable() {
           </tr>
         </thead>
         <tbody>
-          {projectList.map((prj) => (
-            <tr key={prj.id}>
+          {projectList.map((prj, i) => (
+            <tr key={i}>
               <td>{prj.id}</td>
               <td>{prj.title}</td>
               <td>{prj.live}</td>
@@ -68,13 +122,42 @@ export default function ProjectTable() {
               <td>{prj.image}</td>
               <td>{prj.description}</td>
               <td>
-                <button>Delete</button>
+                <button onClick={() => handleDelete(prj.id)}>Delete</button>
               </td>
             </tr>
           ))}
+          {add && (
+            <tr>
+              <td>
+                <input value={Date.now()} disabled />
+              </td>
+              <td>
+                <input onChange={(e) => (newTitle = e.target.value)} />
+              </td>
+              <td>
+                <input
+                  onChange={(e) => {
+                    newLive = e.target.value;
+                  }}
+                />
+              </td>
+              <td>
+                <input onChange={(e) => (newGithub = e.target.value)} />
+              </td>
+              <td>
+                <input onChange={(e) => (newImage = e.target.value)} />
+              </td>
+              <td>
+                <input onChange={(e) => (newDescription = e.target.value)} />
+              </td>
+              <td>
+                <button onClick={handleAdd}>Add</button>
+              </td>
+            </tr>
+          )}
           <tr>
             <td colSpan="7" className={styles.actions}>
-              <button>Add New</button>
+              <button onClick={() => setAdd(true)}>Add New</button>
               <button>Close</button>
             </td>
           </tr>
