@@ -1,12 +1,18 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Homepage from "./pages/Homepage";
-import Admin from "./pages/Admin";
 import AdminLogin from "./pages/AdminLogin";
 import ProjectTable from "./components/project/ProjectTable";
 import DataEditor from "./components/dataEditor/DataEditor";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(function () {
+    document.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+  }, []);
+
   return (
     <div>
       <BrowserRouter>

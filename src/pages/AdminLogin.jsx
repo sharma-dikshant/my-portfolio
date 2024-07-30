@@ -2,17 +2,15 @@ import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import {
   signInWithEmailAndPassword,
-  onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { collection, doc, getDoc, updateDoc, addDoc } from "firebase/firestore";
+import { doc, getDoc,  } from "firebase/firestore";
 import { db } from "../firebase";
 import { auth } from "../firebase";
 
 import {
   HiMiniBell,
   HiEnvelope,
-  HiUserCircle,
   HiMiniHeart,
 } from "react-icons/hi2";
 
@@ -31,14 +29,14 @@ export default function AdminLogin() {
     e.preventDefault();
 
     if (!email || !password) {
-      console.log("Please enter email and password");
+      alert("Please enter email and password");
       return;
     }
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
         setIsLoggedIn(true);
         setEmail("");
         setPassword("");
@@ -163,8 +161,8 @@ function DashMain() {
         const docRef = doc(db, "portfolio", "likes");
         const docSnap = await getDoc(docRef);
 
-        console.log(docRef.id);
-        console.log(docSnap.data().likes);
+        // console.log(docRef.id);
+        // console.log(docSnap.data().likes);
         setLikes(docSnap.data().likes);
       } catch (error) {
         console.error("Error fetching data: ", error);

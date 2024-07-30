@@ -22,8 +22,8 @@ function Homepage() {
           const docRef = doc(db, "portfolio", "likes");
           const docSnap = await getDoc(docRef);
 
-          console.log(docRef.id);
-          console.log(docSnap.data().likes);
+          // console.log(docRef.id);
+          // console.log(docSnap.data().likes);
           setLikes(docSnap.data().likes);
         } catch (error) {
           console.error("Error fetching data: ", error);
@@ -42,14 +42,14 @@ function Homepage() {
           const docRef = doc(db, "projects", "EHzcqmc7DUlrKw83dySi");
           const docSnap = await getDoc(docRef);
           if (docSnap.exists()) {
-            console.log(docRef.id);
-            console.log(docSnap.data());
+            // console.log(docRef.id);
+            // console.log(docSnap.data());
             const data = docSnap.data();
             const projectsArray = data.projects;
-            console.log(projectsArray);
+            // console.log(projectsArray);
             setProjectList(projectsArray);
           } else {
-            console.log("No such document!");
+            // console.log("No such document!");
           }
         } catch (error) {
           console.error("Error fetching data: ", error);
@@ -83,7 +83,7 @@ function Homepage() {
 
   return (
     <div>
-      <Header updateLikes={updateLikes} likes={likes} />
+      <Header updateLikes={updateLikes} likes={likes} headerData={headerData}/>
       <NavBar />
       <About aboutData={aboutData}/>
       <Project projectList={projectList}/>
