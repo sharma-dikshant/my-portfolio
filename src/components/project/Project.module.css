@@ -6,12 +6,14 @@
 
 .layout{
     display: flex;
+  border: 2px solid #f8f9fa;
+
 
 }
 .projectDetails {
     text-align: center;
     padding: 20px;
-    min-width: 300px;
+    width: 400px;
   }
   
   .projectDetails h3 {
@@ -22,6 +24,7 @@
   
   .projectDetails p {
     font-size: 1.1rem;
+    height: 65%;
     color: #666;
     margin-bottom: 20px;
   }
@@ -48,9 +51,20 @@
   
   @media (max-width: 768px) {
 
+    .projectDetails{
+      height: 15rem;
+    }
+
+    .projectDetails p{
+      height: 80%;
+    }
+
     .layout{
+      border: 2px solid #f8f9fa;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        margin-bottom: 60px;
     }
 
     .projectDetails {
@@ -64,10 +78,7 @@
     .projectDetails p {
       font-size: 1rem;
     }
-  
-    .buttonContainer {
-      flex-direction: column;
-    }
+
   
     .buttonContainer button {
       width: 100%;

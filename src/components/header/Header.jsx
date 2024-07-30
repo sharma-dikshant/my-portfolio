@@ -5,7 +5,6 @@ import { FaHeart } from "react-icons/fa";
 import styles from "./Header.module.css";
 //eslint-disable-next-line
 function Header({ likes, updateLikes }) {
- 
   return (
     <>
       <div className={styles.controls}>
@@ -17,7 +16,8 @@ function Header({ likes, updateLikes }) {
         </div>
         <div className={styles.socialConnect}>
           <h2>
-            Hello, 👋 <br />I&apos;m Dikshant Sharma
+            Hello, 👋 I&apos;m
+            <br /> <span className={styles.name}>Dikshant Sharma</span>
           </h2>
           <SocialConnect />
           <div className={styles.likes}>
