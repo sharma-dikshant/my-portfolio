@@ -1,6 +1,7 @@
-import styles from './Footer.module.css';
-
-function Footer() {
+import styles from "./Footer.module.css";
+import { FaHeart } from "react-icons/fa";
+//eslint-disable-next-line
+function Footer({ updateLikes, likes }) {
   return (
     <div className={styles.footer}>
       {/* <div className={styles.socialMedia}>
@@ -9,8 +10,22 @@ function Footer() {
         <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">Twitter</a>
       </div> */}
       <div className={styles.footerInfo}>
-        <p>&copy; {new Date().getFullYear()} Dikshant Sharma. All Rights Reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} Dikshant Sharma. All Rights
+          Reserved.
+        </p>
         <p>Created with React and firebase.</p>
+      </div>
+      <div className={styles.likes}>
+        <span>
+          <stong>How you Like my portfolio.?</stong>
+        </span>
+        <span style={{padding:"5px", display:"flex" , flexDirection:"column"}}>
+          <span className={styles.icon}>
+            <FaHeart />
+          </span>
+          <strong>{likes}</strong>
+        </span>
       </div>
     </div>
   );

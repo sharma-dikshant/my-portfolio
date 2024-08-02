@@ -1,31 +1,81 @@
-/* About.module.css */
 .aboutSection {
-    padding: 50px 20px;
-    background-color: #fff;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.heading {
+  padding: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.aboutContent {
+  max-width: 600px;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.education h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.education p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+}
+
+.imageSection {
+  display: flex;
+  justify-content: center;
+}
+
+.me {
+  height: auto;
+  width: 25rem;
+  /* max-width: 300px; */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.me:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    grid-template-columns: 1fr;
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
   }
-  
-  .aboutSection h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+
+  .imageSection {
+    margin-top: 2rem;
   }
-  
-  .aboutSection p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-    color: #555;
+
+  .me {
+    max-width: 200px;
   }
-  
-  @media (max-width: 768px) {
-    .aboutSection h2 {
-      font-size: 2rem;
-    }
-  
-    .aboutSection p {
-      font-size: 1rem;
-    }
+
+  .heading {
+    font-size: 2rem;
   }
-  
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .education h2 {
+    font-size: 1.5rem;
+  }
+}

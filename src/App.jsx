@@ -5,6 +5,7 @@ import AdminLogin from "./pages/AdminLogin";
 import ProjectTable from "./components/project/ProjectTable";
 import DataEditor from "./components/dataEditor/DataEditor";
 import { useEffect } from "react";
+import "./App.css";
 
 function App() {
   useEffect(function () {

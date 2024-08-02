@@ -8,12 +8,16 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import NavBar from "../components/navbar/NavBar";
 import Project from "../components/project/Project";
+import Intro from "../components/intro/Intro";
+import Skills from "../components/skills/Skills";
+import styles from "./Homepage.module.css";
+
 function Homepage() {
+  const [theme, setTheme] = useState("dark");
   const [likes, setLikes] = useState(0);
   const [projectList, setProjectList] = useState([]);
   const [headerData, setHeaderData] = useState({});
   const [aboutData, setAboutData] = useState({});
-
 
   useEffect(
     function () {
@@ -33,35 +37,31 @@ function Homepage() {
     },
     [likes]
   );
-  
-  useEffect(
-    function () {
-     
-      async function fetchData() {
-        try {
-          const docRef = doc(db, "projects", "EHzcqmc7DUlrKw83dySi");
-          const docSnap = await getDoc(docRef);
-          if (docSnap.exists()) {
-            // console.log(docRef.id);
-            // console.log(docSnap.data());
-            const data = docSnap.data();
-            const projectsArray = data.projects;
-            // console.log(projectsArray);
-            setProjectList(projectsArray);
-          } else {
-            // console.log("No such document!");
-          }
-        } catch (error) {
-          console.error("Error fetching data: ", error);
-        }
-      }
-      fetchData();
-    },
-    []
-  );
 
-  useEffect(function(){
-    async function fetchData(){
+  useEffect(function () {
+    async function fetchData() {
+      try {
+        const docRef = doc(db, "projects", "EHzcqmc7DUlrKw83dySi");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          // console.log(docRef.id);
+          // console.log(docSnap.data());
+          const data = docSnap.data();
+          const projectsArray = data.projects;
+          // console.log(projectsArray);
+          setProjectList(projectsArray);
+        } else {
+          // console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  useEffect(function () {
+    async function fetchData() {
       const docRef = doc(db, "portfolio", "websiteData");
       const docSnap = await getDoc(docRef);
       // console.log(docSnap.data());
@@ -71,7 +71,7 @@ function Homepage() {
       setAboutData(docSnap.data().About);
     }
     fetchData();
-  },[])
+  }, []);
 
   function updateLikes() {
     setLikes(likes + 1); // This will update the likes in the UI
@@ -83,12 +83,14 @@ function Homepage() {
 
   return (
     <div>
-      <Header updateLikes={updateLikes} likes={likes} headerData={headerData}/>
-      <NavBar />
-      <About aboutData={aboutData}/>
-      <Project projectList={projectList}/>
-      <Contact />
-      <Footer />
+      <Header setTheme={setTheme} theme={theme} />
+      <Intro headerData={headerData} theme={theme} />
+      <NavBar theme={theme} />
+      <About aboutData={aboutData} theme={theme} />
+      <Skills theme={theme} />
+      <Project projectList={projectList} theme={theme} />
+      <Contact theme={theme} />
+      <Footer theme={theme} updateLikes={updateLikes} likes={likes} />
     </div>
   );
 }

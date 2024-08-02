@@ -3,7 +3,7 @@
     cursor: pointer;
     border: none;
     padding: 0.9rem 2rem;
-    margin: 0;
+    margin: 1rem;
     font-family: inherit;
     font-size: 1rem;
     position: relative;
@@ -15,6 +15,7 @@
     overflow: hidden;
     background: #66ff66;
     color: ghostwhite;
+
    }
    
    .button span {

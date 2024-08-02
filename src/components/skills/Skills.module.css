@@ -1,0 +1,82 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1rem; /* Reduced padding on smaller screens */
+}
+
+.skills h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.description {
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+  font-size: 1.2rem;
+}
+
+.skillList {
+  max-width: 100%; /* Ensure full width on smaller screens */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem; /* Adjusted for better spacing on mobile */
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px; /* Reduced width for better mobile fit */
+  max-width: 100px; /* Ensure skills don’t get too large */
+  cursor: pointer;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+.icon {
+  width: 50px; /* Adjusted for mobile screens */
+  height: 50px;
+  margin-bottom: 0.5rem; /* Reduced margin for mobile */
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .skills h1 {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .skillList {
+    gap: 1rem; /* Adjusted gap for mobile screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills h1 {
+    font-size: 2rem; /* Further reduce font size for very small screens */
+  }
+
+  .description {
+    font-size: 0.9rem; /* Adjust description font size */
+  }
+
+  .skill {
+    width: 80px; /* Further reduce skill width */
+    max-width: 80px; /* Ensure it does not exceed this width */
+  }
+
+  .icon {
+    width: 40px; /* Further reduce icon size */
+    height: 40px;
+  }
+}

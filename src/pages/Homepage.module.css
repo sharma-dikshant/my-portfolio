@@ -1,0 +1,9 @@
+:global(.light) {
+    background-color: var(--light-background);
+    color: var(--light-font);
+}
+
+:global(.dark) {
+    background-color: var(--dark-background);
+    color: var(--dark-font);
+}
