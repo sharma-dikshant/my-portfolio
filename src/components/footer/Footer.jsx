@@ -20,8 +20,10 @@ function Footer({ updateLikes, likes }) {
         <span>
           <stong>How you Like my portfolio.?</stong>
         </span>
-        <span style={{padding:"5px", display:"flex" , flexDirection:"column"}}>
-          <span className={styles.icon}>
+        <span
+          style={{ padding: "5px", display: "flex", flexDirection: "column" }}
+        >
+          <span className={styles.icon} onClick={() => updateLikes()}>
             <FaHeart />
           </span>
           <strong>{likes}</strong>
