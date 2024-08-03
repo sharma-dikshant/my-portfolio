@@ -45,6 +45,7 @@ function Contact({ theme }) {
       });
       console.log("message sent!");
       dispatch({ type: "reset" });
+      setMessageSent(true);
     } catch (e) {
       console.log(e);
     }
