@@ -7,6 +7,7 @@ function About({ aboutData, theme }) {
     <div className={`${styles.aboutSection} ${theme}`}>
       <section className={styles.aboutContent}>
         <h1 className={styles.heading}>About Me</h1>
+
         {/* eslint-disable-next-line */}
         <p className={styles.description}>{aboutData.description}</p>
 
@@ -16,7 +17,6 @@ function About({ aboutData, theme }) {
           <p>College: Swami Keswanand Institute of Technology, Jaipur</p>
           <p>2024 - Current</p>
         </div>
-
       </section>
       <section className={styles.imageSection}>
         <img src={Me} alt="Me" className={styles.me} />

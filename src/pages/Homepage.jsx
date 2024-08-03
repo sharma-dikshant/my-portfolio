@@ -10,14 +10,14 @@ import NavBar from "../components/navbar/NavBar";
 import Project from "../components/project/Project";
 import Intro from "../components/intro/Intro";
 import Skills from "../components/skills/Skills";
-import styles from "./Homepage.module.css";
+
 
 function Homepage() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [likes, setLikes] = useState(0);
+  const [resume, setResume] = useState("");
+  const [aboutData, setAboutData] = useState("");
   const [projectList, setProjectList] = useState([]);
-  const [headerData, setHeaderData] = useState({});
-  const [aboutData, setAboutData] = useState({});
 
   useEffect(
     function () {
@@ -25,7 +25,6 @@ function Homepage() {
         try {
           const docRef = doc(db, "portfolio", "likes");
           const docSnap = await getDoc(docRef);
-
           // console.log(docRef.id);
           // console.log(docSnap.data().likes);
           setLikes(docSnap.data().likes);
@@ -44,14 +43,11 @@ function Homepage() {
         const docRef = doc(db, "projects", "EHzcqmc7DUlrKw83dySi");
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          // console.log(docRef.id);
-          // console.log(docSnap.data());
           const data = docSnap.data();
           const projectsArray = data.projects;
-          // console.log(projectsArray);
           setProjectList(projectsArray);
         } else {
-          // console.log("No such document!");
+          console.log("No such document!");
         }
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -64,11 +60,9 @@ function Homepage() {
     async function fetchData() {
       const docRef = doc(db, "portfolio", "websiteData");
       const docSnap = await getDoc(docRef);
-      // console.log(docSnap.data());
-      // console.log(docSnap.data().Header);
-      setHeaderData(docSnap.data().Header);
-      // console.log(docSnap.data().About);
       setAboutData(docSnap.data().About);
+
+      setResume(docSnap.data().resume);
     }
     fetchData();
   }, []);
@@ -83,8 +77,8 @@ function Homepage() {
 
   return (
     <div>
-      <Header setTheme={setTheme} theme={theme} />
-      <Intro headerData={headerData} theme={theme} />
+      <Header setTheme={setTheme} theme={theme}/>
+      <Intro theme={theme} resume={resume}/>
       <NavBar theme={theme} />
       <About aboutData={aboutData} theme={theme} />
       <Skills theme={theme} />

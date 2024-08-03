@@ -9,6 +9,7 @@
   text-align: center;
 }
 
+
 .contactSection section{
   width: 50%;
 }
@@ -20,7 +21,13 @@
 }
 
 .description {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.description h1{
+  font-size: 2rem;
+  font-weight: bold;
+
 }
 
 .contactForm {

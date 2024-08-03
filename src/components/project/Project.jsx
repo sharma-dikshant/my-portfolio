@@ -3,7 +3,7 @@ import styles from "./Project.module.css";
 import Button from "../button/Button";
 //eslint-disable-next-line
 function Project({ projectList, theme }) {
-  const [visibleProject, setVisibleProject] = useState(1);
+  const [visibleProject, setVisibleProject] = useState(0);
 
   return (
     <div className={`${styles.projectSection} ${theme}`}>
@@ -11,7 +11,7 @@ function Project({ projectList, theme }) {
       <div className={styles.carousel}>
         {/* eslint-disable-next-line */}
         {projectList.map((project, i) =>
-          visibleProject === i + 1 ? (
+          visibleProject === i ? (
             <div key={project.id} className={styles.projectContainer}>
               <img
                 src={project.image}
@@ -22,7 +22,7 @@ function Project({ projectList, theme }) {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className={styles.techStack}>
-                  {project.techStack.map((tech, index) => (
+                  {project?.techStack.map((tech, index) => (
                     <span key={index}>{tech}</span>
                   ))}
                 </div>
@@ -65,24 +65,24 @@ function Project({ projectList, theme }) {
               </div>
               <div className={styles.navButtons}>
                 <Button
-                  onClick={() =>
+                  OnClick={() =>
                     setVisibleProject((prev) =>
                       //eslint-disable-next-line
-                      prev === 1 ? projectList.length : prev - 1
+                      prev === 0 ? projectList.length - 1 : prev - 1
                     )
                   }
                 >
-                  <span>&lt;</span>
+                  <span>prev</span>
                 </Button>
                 <Button
-                  onClick={() =>
+                  OnClick={() =>
                     setVisibleProject((prev) =>
                       //eslint-disable-next-line
-                      prev === projectList.length ? 1 : prev + 1
+                      prev === projectList.length - 1 ? 0 : prev + 1
                     )
                   }
                 >
-                  <span>&gt;</span>
+                  <span>next</span>
                 </Button>
               </div>
             </div>

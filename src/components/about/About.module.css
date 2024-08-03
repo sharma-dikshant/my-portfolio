@@ -11,7 +11,8 @@
 }
 
 .heading {
-  padding: 10px;
+  /* padding: 10px; */
+  font-weight: bold;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -27,7 +28,7 @@
 }
 
 .education h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -79,3 +80,5 @@
     font-size: 1.5rem;
   }
 }
+
+/* styling for the loving text in console log  */

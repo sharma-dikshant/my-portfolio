@@ -23,21 +23,9 @@ export default function ProjectTable() {
   let newGithub;
   let newImage;
   let newDescription;
+  let newTechStack;
 
   useEffect(function () {
-    // async function fetchData() {
-    //   try {
-    //     const collectionRef = collection(db, "projects");
-    //     console.log(collectionRef);
-    //     if (projectList.length === 0) return;
-    //     const docRef = await addDoc(collectionRef, projectList);
-    //     console.log(docRef.id);
-    //   } catch (error) {
-    //     console.error("Error fetching data: ", error);
-    //   }
-    // }
-    // fetchData();
-
     async function fetchData() {
       try {
         const docRef = doc(db, "projects", "EHzcqmc7DUlrKw83dySi");
@@ -84,8 +72,10 @@ export default function ProjectTable() {
       image: newImage,
       github: newGithub,
       link: newLive,
+      techStack: newTechStack,
     };
     const newArray = [...projectList, newProject];
+    console.log(newArray);
     try {
       await updateDoc(docRef, {
         projects: newArray,
@@ -97,7 +87,7 @@ export default function ProjectTable() {
       setAdd(false);
     }
   }
-
+  console.log(projectList);
   return (
     <div className={styles.projects}>
       <table>
@@ -109,6 +99,7 @@ export default function ProjectTable() {
             <th>Github</th>
             <th>Image</th>
             <th>Description</th>
+            <th>teckStack</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -121,6 +112,7 @@ export default function ProjectTable() {
               <td>{prj.github}</td>
               <td>{prj.image}</td>
               <td>{prj.description}</td>
+              <td>{prj.techStack?.join(", ")}</td>
               <td>
                 <button onClick={() => handleDelete(prj.id)}>Delete</button>
               </td>
@@ -149,6 +141,11 @@ export default function ProjectTable() {
               </td>
               <td>
                 <input onChange={(e) => (newDescription = e.target.value)} />
+              </td>
+              <td>
+                <input
+                  onChange={(e) => (newTechStack = e.target.value.split(", "))}
+                />
               </td>
               <td>
                 <button onClick={handleAdd}>Add</button>
