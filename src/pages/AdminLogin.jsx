@@ -1,18 +1,11 @@
 import { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
-import {
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
-import { doc, getDoc,  } from "firebase/firestore";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { auth } from "../firebase";
 
-import {
-  HiMiniBell,
-  HiEnvelope,
-  HiMiniHeart,
-} from "react-icons/hi2";
+import { HiMiniBell, HiEnvelope, HiMiniHeart } from "react-icons/hi2";
 
 import styles from "./AdminLogin.module.css";
 import ToogleButton from "../components/toogleButton/ToogleButton";
@@ -133,7 +126,9 @@ function DashNav() {
       <div>
         <ToogleButton />
         <span className={styles.icon}>
-          <HiMiniBell />
+          <Link to="messages">
+            <HiMiniBell />
+          </Link>
         </span>
         <span className={styles.icon}>
           <HiEnvelope />

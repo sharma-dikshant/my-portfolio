@@ -75,7 +75,7 @@ export default function ProjectTable() {
       techStack: newTechStack,
     };
     const newArray = [...projectList, newProject];
-    console.log(newArray);
+    // console.log(newArray);
     try {
       await updateDoc(docRef, {
         projects: newArray,
@@ -87,7 +87,7 @@ export default function ProjectTable() {
       setAdd(false);
     }
   }
-  console.log(projectList);
+  // console.log(projectList);
   return (
     <div className={styles.projects}>
       <table>

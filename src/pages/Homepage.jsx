@@ -13,7 +13,7 @@ import Skills from "../components/skills/Skills";
 
 
 function Homepage() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const [likes, setLikes] = useState(0);
   const [resume, setResume] = useState("");
   const [aboutData, setAboutData] = useState("");

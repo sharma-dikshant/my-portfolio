@@ -48,7 +48,7 @@ function DataEditor() {
         const docRef = doc(db, "portfolio", "websiteData");
         const docSnap = await getDoc(docRef);
 
-        console.log(docSnap.data());
+        // console.log(docSnap.data());
         setHeader(docSnap.data().Header);
         setAbout(docSnap.data().About);
         setResume(docSnap.data().resume);
