@@ -18,7 +18,7 @@ function Footer({ updateLikes, likes }) {
       </div>
       <div className={styles.likes}>
         <span>
-          <stong>How you Like my portfolio.?</stong>
+          <stong>How do you Like my portfolio.?</stong>
         </span>
         <span
           style={{ padding: "5px", display: "flex", flexDirection: "column" }}
